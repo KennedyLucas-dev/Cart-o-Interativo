@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão interativo</title>
+    <style>
+      body {
+         
+        background-image: linear-gradient(to right, rgb(18, 168, 12), rgb(3, 85, 44));
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+      
+    }
+      .button-custom{ 
+        background-color: black;
+        color: aliceblue;
+        width: 70%; 
+        padding: 60px 60px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 50px;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 20px auto;
+        
+
+      }
+
+      h1 { 
+        font-size: 80px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: aliceblue;
+        text-align: center;
+
+
+
+      }
+
+      p{
+        text-align: center;
+        color: aliceblue;
+        font-family: arial;
+        font-size: 30px;
+
+        }
+      
+
+      .container {
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+      }
+
+      .img-rounded {
+  border-radius: 30px;
+}
+      .img{
+        display: block;
+        justify-content: center;
+        justify-items: center;
+
+        }
+      
+      /* Efeito Neon Verde */
+    .button-custom.neon {
+      color: limegreen;
+      box-shadow: 0 0 20px limegreen, 0 0 40px limegreen, 0 0 80px limegreen;
+      text-shadow: 0 0 10px limegreen, 0 0 20px limegreen;
+      border-color: limegreen;
+      transform: scale(1.05);
+      animation: neonPulse 1s infinite;
+    }
+
+    /* Animação do brilho pulsante */
+    @keyframes neonPulse {
+      0% { box-shadow: 0 0 15px limegreen, 0 0 30px limegreen; }
+      50% { box-shadow: 0 0 30px limegreen, 0 0 60px limegreen; }
+      100% { box-shadow: 0 0 15px limegreen, 0 0 30px limegreen; }
+
+    }
+    
+    </style>
+      
+
+</head>
+<body>
+   
+<h1>Cartão Interativo</h1>
+<hr>
+<img src="HamburguerAlcatraComBacon_1-scaled.jpg" alt="hamburguer propaganda" class="img-rounded">
+<hr>
+<p>Toque nos botões abaixo!</p>
+<p></p>
+<p></p>
+<p></p>
+
+
+   
+
+<a href="#" target="_blank">
+<button class="button-custom">COMBOS</button> </a> <br>
+
+
+ <a href="#" Fale conosco target="_blank">
+  <button class="button-custom">DELIVERY</button> </a> <br>
+
+   <a href="#" Linkedin target="_blank">
+  <button id="btn1" class="button-custom">CARDÁPIO</button></a> <br>
+
+  <p>Desenvolvido por: Kennedy Lucas</p>
+
+  
+
+</li>
+
+</ul>
+
+   <script>
+    // Seleciona todos os botões
+    const botoes = document.querySelectorAll('.button-custom');
+
+    // Adiciona o efeito neon ao passar o mouse
+    botoes.forEach(botao => {
+      botao.addEventListener('mouseenter', () => {
+        botao.classList.add('neon');
+      });
+
+      botao.addEventListener('mouseleave', () => {
+        botao.classList.remove('neon');
+      });
+
+      // Efeito de clique (pequeno zoom)
+      botao.addEventListener('click', () => {
+        botao.style.transform = 'scale(0.9)';
+        setTimeout(() => botao.style.transform = 'scale(1.05)', 150);
+      });
+    });
+  </script>
+
+</body>
+</html>
